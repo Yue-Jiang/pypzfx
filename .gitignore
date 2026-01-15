@@ -1,3 +1,6 @@
+# macOS
+.DS_Store
+
 # Temp directory for testing
 temp/
 
