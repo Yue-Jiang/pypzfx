@@ -11,8 +11,8 @@ pip install pzfx
 Or install from source:
 
 ```bash
-git clone https://github.com/Yue-Jiang/pzfx.git
-cd pzfx
+git clone https://github.com/Yue-Jiang/pypzfx.git
+cd pypzfx
 pip install -e .
 ```
 

@@ -1,8 +1,8 @@
 site_name: pzfx
 site_description: Read and write GraphPad Prism .pzfx files in Python
 site_url: https://yue-jiang.github.io/pypzfx/
-repo_url: https://github.com/Yue-Jiang/pzfx
-repo_name: Yue-Jiang/pzfx
+repo_url: https://github.com/Yue-Jiang/pypzfx
+repo_name: Yue-Jiang/pypzfx
 
 theme:
   name: material
