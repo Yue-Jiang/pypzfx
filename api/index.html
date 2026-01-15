@@ -1,0 +1,2209 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Read and write GraphPad Prism .pzfx files in Python">
+      
+      
+      
+        <link rel="canonical" href="https://yue-jiang.github.io/pypzfx/api/">
+      
+      
+        <link rel="prev" href="../examples/examples/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>API Reference - pzfx</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="pzfx" class="md-header__button md-logo" aria-label="pzfx" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            pzfx
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yue-Jiang/pypzfx" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Yue-Jiang/pypzfx
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="pzfx" class="md-nav__button md-logo" aria-label="pzfx" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    pzfx
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yue-Jiang/pypzfx" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Yue-Jiang/pypzfx
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pzfx Library Playground
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reading-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pzfx.pzfx_tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pzfx_tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pzfx_tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.pzfx_tables--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.pzfx_tables--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.pzfx_tables--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pzfx.read_pzfx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        read_pzfx
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="read_pzfx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.read_pzfx--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.read_pzfx--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.read_pzfx--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pzfx.write_pzfx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        write_pzfx
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="write_pzfx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.write_pzfx--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.write_pzfx--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.write_pzfx--multiple-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reading-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pzfx.pzfx_tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pzfx_tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pzfx_tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.pzfx_tables--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.pzfx_tables--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.pzfx_tables--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pzfx.read_pzfx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        read_pzfx
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="read_pzfx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.read_pzfx--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.read_pzfx--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.read_pzfx--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pzfx.write_pzfx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        write_pzfx
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="write_pzfx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.write_pzfx--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.write_pzfx--examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pzfx.write_pzfx--multiple-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="api-reference">API Reference</h1>
+<h2 id="reading-functions">Reading Functions</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="pzfx.pzfx_tables" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">pzfx</span><span class="o">.</span><span class="n">pzfx_tables</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>List all tables in a GraphPad Prism .pzfx file.</p>
+<h4 id="pzfx.pzfx_tables--parameters">Parameters</h4>
+<p>path : str
+    Path to the .pzfx file</p>
+<h4 id="pzfx.pzfx_tables--returns">Returns</h4>
+<p>list of str
+    Names of all tables in the file</p>
+<h4 id="pzfx.pzfx_tables--examples">Examples</h4>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>tables = pzfx_tables("data.pzfx")
+print(tables)
+['Table 1', 'Table 2']</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/pzfx/read.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">pzfx_tables</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    List all tables in a GraphPad Prism .pzfx file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    path : str</span>
+<span class="sd">        Path to the .pzfx file</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of str</span>
+<span class="sd">        Names of all tables in the file</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; tables = pzfx_tables(&quot;data.pzfx&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; print(tables)</span>
+<span class="sd">    [&#39;Table 1&#39;, &#39;Table 2&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+
+    <span class="c1"># Find all Table and HugeTable elements</span>
+    <span class="n">table_nodes</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;.//*[local-name()=&#39;Table&#39; or local-name()=&#39;HugeTable&#39;]&quot;</span><span class="p">)</span>
+
+    <span class="n">tables</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">table_nodes</span><span class="p">:</span>
+        <span class="c1"># Use xpath for local-name() support</span>
+        <span class="n">title_nodes</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;.//*[local-name()=&#39;Title&#39;]&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">title_nodes</span> <span class="ow">and</span> <span class="n">title_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+            <span class="n">tables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">tables</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="pzfx.read_pzfx" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">pzfx</span><span class="o">.</span><span class="n">read_pzfx</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">strike_action</span><span class="o">=</span><span class="s1">&#39;exclude&#39;</span><span class="p">,</span> <span class="n">date_x</span><span class="o">=</span><span class="s1">&#39;character&#39;</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Read one table from a GraphPad Prism .pzfx file.</p>
+<h4 id="pzfx.read_pzfx--parameters">Parameters</h4>
+<p>path : str
+    Path to the .pzfx file
+table : int or str
+    Table to read. Either a string (name of table) or integer (1-based position).
+    Defaults to 1 (first table).
+strike_action : str
+    One of "exclude", "keep", "star" (or "e", "k", "s").
+    How to handle excluded/stricken values:
+    - "exclude": replace with NaN
+    - "keep": keep the value
+    - "star": append "*" to the value (column becomes string type)
+date_x : str
+    One of "numeric", "character", "both" (or "n", "c", "b").
+    How to handle Date-formatted X columns.</p>
+<h4 id="pzfx.read_pzfx--returns">Returns</h4>
+<p>pd.DataFrame
+    The table data</p>
+<h4 id="pzfx.read_pzfx--examples">Examples</h4>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>df = read_pzfx("data.pzfx", table=1)
+df = read_pzfx("data.pzfx", table="My Table", strike_action="star")</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/pzfx/read.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_pzfx</span><span class="p">(</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">table</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">strike_action</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;exclude&quot;</span><span class="p">,</span>
+    <span class="n">date_x</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;character&quot;</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read one table from a GraphPad Prism .pzfx file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    path : str</span>
+<span class="sd">        Path to the .pzfx file</span>
+<span class="sd">    table : int or str</span>
+<span class="sd">        Table to read. Either a string (name of table) or integer (1-based position).</span>
+<span class="sd">        Defaults to 1 (first table).</span>
+<span class="sd">    strike_action : str</span>
+<span class="sd">        One of &quot;exclude&quot;, &quot;keep&quot;, &quot;star&quot; (or &quot;e&quot;, &quot;k&quot;, &quot;s&quot;).</span>
+<span class="sd">        How to handle excluded/stricken values:</span>
+<span class="sd">        - &quot;exclude&quot;: replace with NaN</span>
+<span class="sd">        - &quot;keep&quot;: keep the value</span>
+<span class="sd">        - &quot;star&quot;: append &quot;*&quot; to the value (column becomes string type)</span>
+<span class="sd">    date_x : str</span>
+<span class="sd">        One of &quot;numeric&quot;, &quot;character&quot;, &quot;both&quot; (or &quot;n&quot;, &quot;c&quot;, &quot;b&quot;).</span>
+<span class="sd">        How to handle Date-formatted X columns.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        The table data</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; df = read_pzfx(&quot;data.pzfx&quot;, table=1)</span>
+<span class="sd">    &gt;&gt;&gt; df = read_pzfx(&quot;data.pzfx&quot;, table=&quot;My Table&quot;, strike_action=&quot;star&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Validate date_x</span>
+    <span class="n">date_x</span> <span class="o">=</span> <span class="n">date_x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">date_x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="s2">&quot;character&quot;</span><span class="p">,</span> <span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;date_x must be one of (&#39;numeric&#39;, &#39;character&#39;, &#39;both&#39;, &#39;n&#39;, &#39;c&#39;, &#39;b&#39;)&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Get table names</span>
+    <span class="n">table_names</span> <span class="o">=</span> <span class="n">pzfx_tables</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="c1"># Determine table index</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">table</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">table</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">table_names</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Table index out of range&quot;</span><span class="p">)</span>
+        <span class="n">this_idx</span> <span class="o">=</span> <span class="n">table</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># Convert to 0-based</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">table</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table_names</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Can&#39;t find </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2"> in prism file&quot;</span><span class="p">)</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">table_names</span><span class="p">)</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="n">table</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Multiple tables named </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2">, returning the first one only&quot;</span><span class="p">)</span>
+        <span class="n">this_idx</span> <span class="o">=</span> <span class="n">indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Parse XML</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+
+    <span class="c1"># Find all tables</span>
+    <span class="n">table_nodes</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;.//*[local-name()=&#39;Table&#39; or local-name()=&#39;HugeTable&#39;]&quot;</span><span class="p">)</span>
+    <span class="n">this_table</span> <span class="o">=</span> <span class="n">table_nodes</span><span class="p">[</span><span class="n">this_idx</span><span class="p">]</span>
+
+    <span class="c1"># Check for Title</span>
+    <span class="n">title_elem</span> <span class="o">=</span> <span class="n">this_table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Title&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">title_elem</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t work with this pzfx file, is it later than v6.0?&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Get format attributes</span>
+    <span class="n">x_format</span> <span class="o">=</span> <span class="n">this_table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XFormat&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">y_format</span> <span class="o">=</span> <span class="n">this_table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;YFormat&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Check if XAdvancedColumn exists (for date handling)</span>
+    <span class="n">has_x_advanced</span> <span class="o">=</span> <span class="n">this_table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;XAdvancedColumn&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="c1"># First pass: collect all columns to determine max length</span>
+    <span class="n">col_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">col_info</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Store (elem, tag, kwargs) for second pass if needed</span>
+
+    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">this_table</span><span class="p">:</span>
+        <span class="n">tag</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">QName</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span><span class="o">.</span><span class="n">localname</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">tag</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">elem</span><span class="o">.</span><span class="n">tag</span>
+
+        <span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;XColumn&quot;</span><span class="p">:</span>
+            <span class="c1"># Read normally unless it&#39;s date and we want character only</span>
+            <span class="k">if</span> <span class="n">x_format</span> <span class="o">==</span> <span class="s2">&quot;date&quot;</span> <span class="ow">and</span> <span class="p">(</span><span class="n">date_x</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">has_x_advanced</span><span class="p">):</span>
+                <span class="n">col_df</span> <span class="o">=</span> <span class="n">_read_col</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">strike_action</span><span class="o">=</span><span class="n">strike_action</span><span class="p">,</span> <span class="n">col_name</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">format_</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">date_x</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">col_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                    <span class="n">col_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">_1&quot;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">col_df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+                <span class="n">col_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col_df</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">x_format</span> <span class="o">==</span> <span class="s2">&quot;date&quot;</span><span class="p">:</span>
+                <span class="k">continue</span>  <span class="c1"># Skip XColumn for date when we only want character</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">col_df</span> <span class="o">=</span> <span class="n">_read_col</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">strike_action</span><span class="o">=</span><span class="n">strike_action</span><span class="p">,</span> <span class="n">col_name</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">format_</span><span class="o">=</span><span class="n">x_format</span><span class="p">)</span>
+                <span class="n">col_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col_df</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;XAdvancedColumn&quot;</span><span class="p">:</span>
+            <span class="c1"># Only read if it&#39;s date and we want character or both</span>
+            <span class="k">if</span> <span class="n">x_format</span> <span class="o">==</span> <span class="s2">&quot;date&quot;</span> <span class="ow">and</span> <span class="n">date_x</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;character&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">):</span>
+                <span class="n">col_df</span> <span class="o">=</span> <span class="n">_read_col</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">strike_action</span><span class="o">=</span><span class="n">strike_action</span><span class="p">,</span> <span class="n">col_name</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">format_</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">date_x</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">col_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                    <span class="n">col_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">_2&quot;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">col_df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+                <span class="n">col_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col_df</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;RowTitlesColumn&quot;</span><span class="p">:</span>
+            <span class="n">col_df</span> <span class="o">=</span> <span class="n">_read_col</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">strike_action</span><span class="o">=</span><span class="n">strike_action</span><span class="p">,</span> <span class="n">col_name</span><span class="o">=</span><span class="s2">&quot;ROWTITLE&quot;</span><span class="p">,</span> <span class="n">format_</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="c1"># Only include ROWTITLE if it has actual data (not all empty/NaN)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">col_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="n">col_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col_df</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;YColumn&quot;</span><span class="p">:</span>
+            <span class="n">col_df</span> <span class="o">=</span> <span class="n">_read_col</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">strike_action</span><span class="o">=</span><span class="n">strike_action</span><span class="p">,</span> <span class="n">format_</span><span class="o">=</span><span class="n">y_format</span><span class="p">)</span>
+            <span class="n">col_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col_df</span><span class="p">)</span>
+
+    <span class="c1"># Filter out truly empty dataframes (no columns at all)</span>
+    <span class="n">col_dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span> <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">col_dfs</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">col_dfs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+    <span class="c1"># Find max length from non-empty columns</span>
+    <span class="n">max_len</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">col_dfs</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">df</span><span class="o">.</span><span class="n">empty</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Pad all DataFrames to same length and concatenate</span>
+    <span class="n">padded_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">col_dfs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">empty</span> <span class="ow">and</span> <span class="n">max_len</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Empty column - fill with NaN</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">col</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span> <span class="o">*</span> <span class="n">max_len</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">})</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">max_len</span><span class="p">:</span>
+            <span class="n">padding</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="p">{</span><span class="n">col</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_len</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">}</span>
+            <span class="p">)</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">padding</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">padded_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">padded_dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="writing-functions">Writing Functions</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="pzfx.write_pzfx" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">pzfx</span><span class="o">.</span><span class="n">write_pzfx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">row_names</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">x_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x_err</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_digits</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subcolumns</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">subcolumn_suffix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Write one or more tables to a GraphPad Prism .pzfx file.</p>
+<h4 id="pzfx.write_pzfx--parameters">Parameters</h4>
+<p>x : pd.DataFrame or dict of pd.DataFrame
+    Data frame or named dict of data frames to include as Prism tables.
+path : str
+    Path to output file.
+row_names : bool or list of bool
+    Include row names (index) as row titles? Default: True.
+x_col : int, str, or list thereof, optional
+    Column index (1-based) or name(s) for X column. 0 or None for none.
+x_err : int, str, or list thereof, optional
+    Column index (1-based) or name(s) for X error. 0 or None for none.
+n_digits : int or list of int
+    Number of decimal places to display for numeric data. Default: 2.
+notes : pd.DataFrame or dict of pd.DataFrame, optional
+    Notes table(s) with columns 'Name' and 'Value'. Default: None (empty notes).
+subcolumns : int, str, or list thereof
+    Number of subcolumns for Y data, or "SDN" for mean/SD/N format. Default: 1.
+subcolumn_suffix : str or list of str
+    Regex or string identifying grouped subcolumns (e.g., "_[0-9]+$" to group
+    A_1, A_2 as column A). Default: "" (no grouping).</p>
+<h4 id="pzfx.write_pzfx--examples">Examples</h4>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+write_pzfx(df, "output.pzfx")</p>
+<h3 id="pzfx.write_pzfx--multiple-tables">Multiple tables</h3>
+<p>tables = {'Table1': df1, 'Table2': df2}
+write_pzfx(tables, "output.pzfx")</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/pzfx/write.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">write_pzfx</span><span class="p">(</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]],</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">row_names</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">x_col</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">x_err</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">n_digits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">notes</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">subcolumns</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">subcolumn_suffix</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write one or more tables to a GraphPad Prism .pzfx file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : pd.DataFrame or dict of pd.DataFrame</span>
+<span class="sd">        Data frame or named dict of data frames to include as Prism tables.</span>
+<span class="sd">    path : str</span>
+<span class="sd">        Path to output file.</span>
+<span class="sd">    row_names : bool or list of bool</span>
+<span class="sd">        Include row names (index) as row titles? Default: True.</span>
+<span class="sd">    x_col : int, str, or list thereof, optional</span>
+<span class="sd">        Column index (1-based) or name(s) for X column. 0 or None for none.</span>
+<span class="sd">    x_err : int, str, or list thereof, optional</span>
+<span class="sd">        Column index (1-based) or name(s) for X error. 0 or None for none.</span>
+<span class="sd">    n_digits : int or list of int</span>
+<span class="sd">        Number of decimal places to display for numeric data. Default: 2.</span>
+<span class="sd">    notes : pd.DataFrame or dict of pd.DataFrame, optional</span>
+<span class="sd">        Notes table(s) with columns &#39;Name&#39; and &#39;Value&#39;. Default: None (empty notes).</span>
+<span class="sd">    subcolumns : int, str, or list thereof</span>
+<span class="sd">        Number of subcolumns for Y data, or &quot;SDN&quot; for mean/SD/N format. Default: 1.</span>
+<span class="sd">    subcolumn_suffix : str or list of str</span>
+<span class="sd">        Regex or string identifying grouped subcolumns (e.g., &quot;_[0-9]+$&quot; to group</span>
+<span class="sd">        A_1, A_2 as column A). Default: &quot;&quot; (no grouping).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.DataFrame({&#39;A&#39;: [1, 2, 3], &#39;B&#39;: [4, 5, 6]})</span>
+<span class="sd">    &gt;&gt;&gt; write_pzfx(df, &quot;output.pzfx&quot;)</span>
+
+<span class="sd">    &gt;&gt;&gt; # Multiple tables</span>
+<span class="sd">    &gt;&gt;&gt; tables = {&#39;Table1&#39;: df1, &#39;Table2&#39;: df2}</span>
+<span class="sd">    &gt;&gt;&gt; write_pzfx(tables, &quot;output.pzfx&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Helper functions</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">utc_iso8601</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return current UTC time in ISO 8601 format.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%S+00:00&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">require_length</span><span class="p">(</span><span class="n">arg</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ensure argument has length 1 or n, returning a list of length n.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">arg</span> <span class="o">=</span> <span class="p">[</span><span class="n">arg</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">arg</span> <span class="o">=</span> <span class="n">arg</span> <span class="o">*</span> <span class="n">n</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Argument &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; must have length 1 or </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">arg</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">coerce_to_list_of_dfs</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert input to a dict of DataFrames.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2"> 1&quot;</span><span class="p">:</span> <span class="n">obj</span><span class="p">}</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="c1"># Check all values are DataFrames</span>
+            <span class="n">bad</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)]</span>
+            <span class="k">if</span> <span class="n">bad</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;These </span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2"> elements are not DataFrames: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">bad</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># Ensure names</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="n">obj</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot process </span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2"> of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">normalise_col_arg</span><span class="p">(</span><span class="n">arg</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">lst</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span> <span class="n">label</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Normalize column argument to list of integer indices (1-based, 0 means none).&quot;&quot;&quot;</span>
+        <span class="n">arg</span> <span class="o">=</span> <span class="n">require_length</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span> <span class="n">label</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lst</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">arg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 1-based</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column &#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&#39; not in table &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;; ignored as </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">subcol_helper</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">etree</span><span class="o">.</span><span class="n">_Element</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create list of &#39;d&#39; elements for a subcolumn.&quot;&quot;&quot;</span>
+        <span class="n">elements</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+            <span class="n">d_elem</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+                <span class="c1"># Empty element for NA</span>
+                <span class="k">pass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">v_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">v_str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+                    <span class="c1"># Excluded value</span>
+                    <span class="n">d_elem</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Excluded&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+                    <span class="n">d_elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">v_str</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Remove the *</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">d_elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">v_str</span>
+            <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_elem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">elements</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">build_xcol_structure</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">x_idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">x_err_idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n_dig</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">etree</span><span class="o">.</span><span class="n">_Element</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build XColumn element.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">x_idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">xcol</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;XColumn&quot;</span><span class="p">)</span>
+        <span class="n">xcol</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Width&quot;</span><span class="p">,</span> <span class="s2">&quot;89&quot;</span> <span class="k">if</span> <span class="n">x_err_idx</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;120&quot;</span><span class="p">)</span>
+        <span class="n">xcol</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Decimals&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_dig</span><span class="p">))</span>
+        <span class="n">xcol</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Subcolumns&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span> <span class="k">if</span> <span class="n">x_err_idx</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Title</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">xcol</span><span class="p">,</span> <span class="s2">&quot;Title&quot;</span><span class="p">)</span>
+        <span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">x_idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Convert to 0-based</span>
+
+        <span class="c1"># Main subcolumn</span>
+        <span class="n">subcol</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">xcol</span><span class="p">,</span> <span class="s2">&quot;Subcolumn&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">d_elem</span> <span class="ow">in</span> <span class="n">subcol_helper</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">x_idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]):</span>
+            <span class="n">subcol</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_elem</span><span class="p">)</span>
+
+        <span class="c1"># Error subcolumn if present</span>
+        <span class="k">if</span> <span class="n">x_err_idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">subcol_err</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">xcol</span><span class="p">,</span> <span class="s2">&quot;Subcolumn&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">d_elem</span> <span class="ow">in</span> <span class="n">subcol_helper</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">x_err_idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]):</span>
+                <span class="n">subcol_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_elem</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">xcol</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_subcolumns</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">expected_count</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n_dig</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">etree</span><span class="o">.</span><span class="n">_Element</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate YColumn elements with subcolumns.&quot;&quot;&quot;</span>
+        <span class="n">col_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">col_names</span><span class="p">:</span>
+            <span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;V</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))]</span>
+
+        <span class="c1"># Group columns by removing suffix</span>
+        <span class="k">if</span> <span class="n">suffix</span><span class="p">:</span>
+            <span class="n">grouping_factor</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">suffix</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">grouping_factor</span> <span class="o">=</span> <span class="n">col_names</span>
+
+        <span class="c1"># Group columns</span>
+        <span class="n">groups</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">group_order</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">col_names</span><span class="p">,</span> <span class="n">grouping_factor</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">group</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+                <span class="n">groups</span><span class="p">[</span><span class="n">group</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">group_order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+            <span class="n">groups</span><span class="p">[</span><span class="n">group</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+
+        <span class="n">y_columns</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">group_order</span><span class="p">:</span>
+            <span class="n">group_cols</span> <span class="o">=</span> <span class="n">groups</span><span class="p">[</span><span class="n">group</span><span class="p">]</span>
+            <span class="n">count_found</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_cols</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">count_found</span> <span class="o">&gt;</span> <span class="n">expected_count</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Group &#39;</span><span class="si">{</span><span class="n">group</span><span class="si">}</span><span class="s2">&#39; has </span><span class="si">{</span><span class="n">count_found</span><span class="si">}</span><span class="s2"> columns, but </span><span class="si">{</span><span class="n">expected_count</span><span class="si">}</span><span class="s2"> were expected.&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">ycol</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;YColumn&quot;</span><span class="p">)</span>
+            <span class="n">ycol</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Width&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="mi">89</span> <span class="o">*</span> <span class="n">expected_count</span><span class="p">))</span>
+            <span class="n">ycol</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Decimals&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_dig</span><span class="p">))</span>
+            <span class="n">ycol</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Subcolumns&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">expected_count</span><span class="p">))</span>
+
+            <span class="c1"># Title</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">ycol</span><span class="p">,</span> <span class="s2">&quot;Title&quot;</span><span class="p">)</span>
+            <span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">group</span>
+
+            <span class="c1"># Add subcolumns for existing columns</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">group_cols</span><span class="p">:</span>
+                <span class="n">subcol</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">ycol</span><span class="p">,</span> <span class="s2">&quot;Subcolumn&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">d_elem</span> <span class="ow">in</span> <span class="n">subcol_helper</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]):</span>
+                    <span class="n">subcol</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_elem</span><span class="p">)</span>
+
+            <span class="c1"># Pad with empty subcolumns if needed</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">expected_count</span> <span class="o">-</span> <span class="n">count_found</span><span class="p">):</span>
+                <span class="n">subcol</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">ycol</span><span class="p">,</span> <span class="s2">&quot;Subcolumn&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+                    <span class="n">d_elem</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+                    <span class="n">subcol</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_elem</span><span class="p">)</span>
+
+            <span class="n">y_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ycol</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">y_columns</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">build_table</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">table_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">table_idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">row_name</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+        <span class="n">xi</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">xe</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">n_dig</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">subc</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+        <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">etree</span><span class="o">.</span><span class="n">_Element</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build a Table element.&quot;&quot;&quot;</span>
+        <span class="n">y_format</span> <span class="o">=</span> <span class="s2">&quot;replicates&quot;</span>
+        <span class="n">table_type</span> <span class="o">=</span> <span class="s2">&quot;OneWay&quot;</span>
+        <span class="n">x_format</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span>
+
+        <span class="k">if</span> <span class="n">subc</span> <span class="o">==</span> <span class="s2">&quot;SDN&quot;</span><span class="p">:</span>
+            <span class="n">y_format</span> <span class="o">=</span> <span class="s2">&quot;SDN&quot;</span>
+            <span class="n">subc</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">subc</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subc</span><span class="p">)</span>
+
+        <span class="c1"># Build XColumn</span>
+        <span class="n">xcol</span> <span class="o">=</span> <span class="n">build_xcol_structure</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">xe</span><span class="p">,</span> <span class="n">n_dig</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">xcol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">x_format</span> <span class="o">=</span> <span class="s2">&quot;numbers&quot;</span> <span class="k">if</span> <span class="n">xe</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;error&quot;</span>
+            <span class="n">table_type</span> <span class="o">=</span> <span class="s2">&quot;XY&quot;</span>
+
+        <span class="c1"># Get Y columns (exclude X and X_err columns)</span>
+        <span class="n">exclude_cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">xi</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">exclude_cols</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">xi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Convert to 0-based</span>
+        <span class="k">if</span> <span class="n">xe</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">exclude_cols</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">xe</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">y_col_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude_cols</span><span class="p">]</span>
+        <span class="n">df_y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">y_col_indices</span><span class="p">]</span>
+
+        <span class="c1"># Generate YColumns</span>
+        <span class="n">ycols</span> <span class="o">=</span> <span class="n">generate_subcolumns</span><span class="p">(</span><span class="n">df_y</span><span class="p">,</span> <span class="n">subc</span><span class="p">,</span> <span class="n">suffix</span><span class="p">,</span> <span class="n">n_dig</span><span class="p">)</span>
+
+        <span class="c1"># Build Table element</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;Table&quot;</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Table</span><span class="si">{</span><span class="n">table_idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;XFormat&quot;</span><span class="p">,</span> <span class="n">x_format</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;YFormat&quot;</span><span class="p">,</span> <span class="n">y_format</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Replicates&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">subc</span><span class="p">))</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;TableType&quot;</span><span class="p">,</span> <span class="n">table_type</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;EVFormat&quot;</span><span class="p">,</span> <span class="s2">&quot;AsteriskAfterNumber&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Title</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="s2">&quot;Title&quot;</span><span class="p">)</span>
+        <span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">table_name</span>
+
+        <span class="c1"># RowTitlesColumn</span>
+        <span class="k">if</span> <span class="n">row_name</span><span class="p">:</span>
+            <span class="n">row_titles</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="s2">&quot;RowTitlesColumn&quot;</span><span class="p">)</span>
+            <span class="n">row_titles</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Width&quot;</span><span class="p">,</span> <span class="s2">&quot;39&quot;</span><span class="p">)</span>
+            <span class="n">subcol</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">row_titles</span><span class="p">,</span> <span class="s2">&quot;Subcolumn&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">idx_val</span> <span class="ow">in</span> <span class="n">df_y</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+                <span class="n">d_elem</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+                <span class="n">d_elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx_val</span><span class="p">)</span>
+                <span class="n">subcol</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_elem</span><span class="p">)</span>
+
+        <span class="c1"># XColumn</span>
+        <span class="k">if</span> <span class="n">xcol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xcol</span><span class="p">)</span>
+
+        <span class="c1"># YColumns</span>
+        <span class="k">for</span> <span class="n">ycol</span> <span class="ow">in</span> <span class="n">ycols</span><span class="p">:</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ycol</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">table</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">build_info</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">info_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">info_idx</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">etree</span><span class="o">.</span><span class="n">_Element</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build an Info element for notes.&quot;&quot;&quot;</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;Info&quot;</span><span class="p">)</span>
+        <span class="n">info</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Info</span><span class="si">{</span><span class="n">info_idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Title</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s2">&quot;Title&quot;</span><span class="p">)</span>
+        <span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">info_name</span>
+
+        <span class="c1"># Notes section</span>
+        <span class="n">notes_elem</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s2">&quot;Notes&quot;</span><span class="p">)</span>
+        <span class="n">font</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">notes_elem</span><span class="p">,</span> <span class="s2">&quot;Font&quot;</span><span class="p">)</span>
+        <span class="n">font</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Color&quot;</span><span class="p">,</span> <span class="s2">&quot;#000000&quot;</span><span class="p">)</span>
+        <span class="n">font</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Face&quot;</span><span class="p">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Get Notes rows</span>
+        <span class="k">if</span> <span class="s2">&quot;Name&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="s2">&quot;Value&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">notes_rows</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Notes&quot;</span><span class="p">]</span>
+            <span class="n">constants</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Notes&quot;</span><span class="p">]</span>
+
+            <span class="c1"># Add note values</span>
+            <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">notes_rows</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Value&quot;</span><span class="p">]):</span>
+                    <span class="n">font</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Value&quot;</span><span class="p">])</span>
+                    <span class="n">br</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s2">&quot;BR&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Add constants</span>
+            <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">constants</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+                <span class="n">const</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s2">&quot;Constant&quot;</span><span class="p">)</span>
+                <span class="n">name_elem</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">const</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">)</span>
+                <span class="n">name_elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">])</span>
+                <span class="n">value_elem</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">const</span><span class="p">,</span> <span class="s2">&quot;Value&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Value&quot;</span><span class="p">]):</span>
+                    <span class="n">value_elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Value&quot;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">info</span>
+
+    <span class="c1"># Main body</span>
+
+    <span class="c1"># Default notes</span>
+    <span class="k">if</span> <span class="n">notes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">notes</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Project Info 1&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Notes&quot;</span><span class="p">],</span> <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">]})}</span>
+
+    <span class="c1"># Coerce inputs</span>
+    <span class="n">n_lst</span> <span class="o">=</span> <span class="n">coerce_to_list_of_dfs</span><span class="p">(</span><span class="n">notes</span><span class="p">,</span> <span class="s2">&quot;Project Info&quot;</span><span class="p">)</span>
+    <span class="n">x_lst</span> <span class="o">=</span> <span class="n">coerce_to_list_of_dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;Data&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">x_lst</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_lst</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No data tables provided&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Warn about non-numeric columns</span>
+    <span class="k">for</span> <span class="n">nm</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">x_lst</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">bad_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">])]</span>
+        <span class="k">if</span> <span class="n">bad_cols</span><span class="p">:</span>
+            <span class="c1"># Check for values that are neither numeric nor *-suffixed</span>
+            <span class="n">problem_values</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">bad_cols</span><span class="p">:</span>
+                <span class="n">vals</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">:</span>
+                    <span class="n">v_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                    <span class="c1"># Skip if it ends with * (exclusion marker)</span>
+                    <span class="k">if</span> <span class="n">v_str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+                        <span class="k">continue</span>
+                    <span class="c1"># Skip if it can be converted to numeric</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="nb">float</span><span class="p">(</span><span class="n">v_str</span><span class="p">)</span>
+                        <span class="k">continue</span>
+                    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                        <span class="k">pass</span>
+                    <span class="c1"># This is a problematic value</span>
+                    <span class="n">problem_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v_str</span><span class="p">)</span>
+
+            <span class="n">problem_values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">problem_values</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="n">problem_values</span><span class="p">:</span>
+                <span class="c1"># Stronger warning for non-numeric, non-exclusion values</span>
+                <span class="n">sample_vals</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">problem_values</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">problem_values</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">sample_vals</span> <span class="o">+=</span> <span class="s2">&quot;, ...&quot;</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Table &#39;</span><span class="si">{</span><span class="n">nm</span><span class="si">}</span><span class="s2">&#39; has non-numeric columns (</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">bad_cols</span><span class="p">)</span><span class="si">}</span><span class="s2">) &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;containing text values that cannot be converted to numbers: </span><span class="si">{</span><span class="n">sample_vals</span><span class="si">}</span><span class="s2">. &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;These will be written as literal text in Prism, which may not be what you intended.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Milder warning when all values are either numeric or *-suffixed</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Table &#39;</span><span class="si">{</span><span class="n">nm</span><span class="si">}</span><span class="s2">&#39; has non-numeric columns (</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">bad_cols</span><span class="p">)</span><span class="si">}</span><span class="s2">) &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;which will be written as text. Values ending with &#39;*&#39; will be marked as excluded in Prism.&quot;</span>
+                <span class="p">)</span>
+
+    <span class="c1"># Normalize vector arguments</span>
+    <span class="n">n_tables</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_lst</span><span class="p">)</span>
+    <span class="n">row_names_list</span> <span class="o">=</span> <span class="n">require_length</span><span class="p">(</span><span class="n">row_names</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">row_names</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">row_names</span><span class="p">],</span> <span class="n">n_tables</span><span class="p">,</span> <span class="s2">&quot;row_names&quot;</span><span class="p">)</span>
+    <span class="n">subcolumns_list</span> <span class="o">=</span> <span class="n">require_length</span><span class="p">(</span><span class="n">subcolumns</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subcolumns</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">subcolumns</span><span class="p">],</span> <span class="n">n_tables</span><span class="p">,</span> <span class="s2">&quot;subcolumns&quot;</span><span class="p">)</span>
+    <span class="n">suffix_list</span> <span class="o">=</span> <span class="n">require_length</span><span class="p">(</span><span class="n">subcolumn_suffix</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subcolumn_suffix</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">subcolumn_suffix</span><span class="p">],</span> <span class="n">n_tables</span><span class="p">,</span> <span class="s2">&quot;subcolumn_suffix&quot;</span><span class="p">)</span>
+    <span class="n">n_digits_list</span> <span class="o">=</span> <span class="n">require_length</span><span class="p">(</span><span class="n">n_digits</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n_digits</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">n_digits</span><span class="p">],</span> <span class="n">n_tables</span><span class="p">,</span> <span class="s2">&quot;n_digits&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Normalize column arguments</span>
+    <span class="n">x_col_list</span> <span class="o">=</span> <span class="n">normalise_col_arg</span><span class="p">(</span>
+        <span class="n">x_col</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x_col</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">x_col</span><span class="p">]</span> <span class="k">if</span> <span class="n">x_col</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+        <span class="n">x_lst</span><span class="p">,</span> <span class="s2">&quot;x_col&quot;</span>
+    <span class="p">)</span>
+    <span class="n">x_err_list</span> <span class="o">=</span> <span class="n">normalise_col_arg</span><span class="p">(</span>
+        <span class="n">x_err</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x_err</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">x_err</span><span class="p">]</span> <span class="k">if</span> <span class="n">x_err</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+        <span class="n">x_lst</span><span class="p">,</span> <span class="s2">&quot;x_err&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Validate column indices</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_lst</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">nc</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">x_col_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nc</span> <span class="ow">or</span> <span class="n">x_err_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not enough columns for table </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Build XML structure</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;GraphPadPrismFile&quot;</span><span class="p">)</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;PrismXMLVersion&quot;</span><span class="p">,</span> <span class="s2">&quot;5.00&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Created element</span>
+    <span class="n">created</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;Created&quot;</span><span class="p">)</span>
+    <span class="n">orig_version</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">created</span><span class="p">,</span> <span class="s2">&quot;OriginalVersion&quot;</span><span class="p">)</span>
+    <span class="n">orig_version</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CreatedByProgram&quot;</span><span class="p">,</span> <span class="s2">&quot;GraphPad Prism&quot;</span><span class="p">)</span>
+    <span class="n">orig_version</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CreatedByVersion&quot;</span><span class="p">,</span> <span class="s2">&quot;6.0f.254&quot;</span><span class="p">)</span>
+    <span class="n">orig_version</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Login&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">orig_version</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;DateTime&quot;</span><span class="p">,</span> <span class="n">utc_iso8601</span><span class="p">())</span>
+
+    <span class="c1"># InfoSequence</span>
+    <span class="k">if</span> <span class="n">n_lst</span><span class="p">:</span>
+        <span class="n">info_seq</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;InfoSequence&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_lst</span><span class="p">)):</span>
+            <span class="n">ref</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">info_seq</span><span class="p">,</span> <span class="s2">&quot;Ref&quot;</span><span class="p">)</span>
+            <span class="n">ref</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Info</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">ref</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Selected&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Info elements</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">n_lst</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+            <span class="n">info_elem</span> <span class="o">=</span> <span class="n">build_info</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">root</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info_elem</span><span class="p">)</span>
+
+    <span class="c1"># TableSequence</span>
+    <span class="n">table_seq</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;TableSequence&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_lst</span><span class="p">)):</span>
+        <span class="n">ref</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">table_seq</span><span class="p">,</span> <span class="s2">&quot;Ref&quot;</span><span class="p">)</span>
+        <span class="n">ref</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Table</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ref</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Selected&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Table elements</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_lst</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">table_elem</span> <span class="o">=</span> <span class="n">build_table</span><span class="p">(</span>
+            <span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span>
+            <span class="n">row_names_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="n">x_col_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="n">x_err_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="n">n_digits_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="n">subcolumns_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="n">suffix_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">table_elem</span><span class="p">)</span>
+
+    <span class="c1"># Write to file</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">xml_declaration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pretty_print</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
