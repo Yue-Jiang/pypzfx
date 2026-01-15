@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pzfx"
+version = "0.3.0"
+description = "Read and write GraphPad Prism .pzfx files"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    { name = "Yue Jiang", email = "rivehill@gmail.com" }
+]
+keywords = ["graphpad", "prism", "pzfx", "scientific", "data", "biology", "statistics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=1.0.0",
+    "lxml>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+docs = [
+    "mkdocs >= 1.5.0",
+    "mkdocs-material >= 9.0.0",
+    "mkdocstrings[python] >= 0.24.0",
+    "mkdocs-jupyter >= 0.24.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Yue-Jiang/pzfx"
+Repository = "https://github.com/Yue-Jiang/pzfx"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pzfx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
